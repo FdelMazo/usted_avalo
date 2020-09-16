@@ -1,0 +1,3 @@
+[submodule "libs/ptgms"]
+	path = libs/ptgms
+	url = git@github.com:ptgms/video-to-ascii.git

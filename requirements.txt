@@ -3,3 +3,4 @@ video-to-ascii==1.2.8
 numpy==1.18.4
 tqdm==4.42.1
 moviepy==1.0.3
+asciisciit==0.3.0

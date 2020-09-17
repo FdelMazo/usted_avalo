@@ -1,7 +1,9 @@
-VIDEO=pelea.mp4
+VIDEO=rotoscopeado.mp4
 
-all:
+amia:
 	video-to-ascii -f $(VIDEO) --strategy just-ascii
-	ln -s libs/ptgms/* ./ || true && python main.py --file $(VIDEO) || true && python "final_out $(VIDEO).py" && find . -maxdepth 1 -type l -delete
+	video-to-ascii -f $(VIDEO) --strategy filled-ascii
+	ln -s libs/ptgms/* ./ || true && python main.py --file $(VIDEO) || true && python "final_out $(VIDEO).py" && find . -maxdepth 1 -type l -delete && rm -f "final_out $(VIDEO).py"
 	asciit $(VIDEO) -s 0.15
-	python libs/ascii_video.py -f $(VIDEO)
+	asciit $(VIDEO) -s 0.15 --i
+	python libs/ascii_video.py -f $(VIDEO) -r 200
